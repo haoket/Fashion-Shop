@@ -1,0 +1,134 @@
+@mixin itemProduct {
+    width: 20%;
+    overflow: hidden;
+
+    .productImg {
+        position: relative;
+        height: auto;
+        overflow: hidden;
+
+        .product__lable {
+            display: flex;
+            font-weight: 100;
+            border-radius: 100%;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            right: 0;
+            color: white;
+            z-index: 3;
+            font-size: 25px;
+            background-color: rgb(35, 34, 34);
+
+
+        }
+
+        img {
+            width: 100%;
+            transition: transform 0.3s ease;
+            object-fit: contain;
+        }
+
+        .product__action {
+            display: none;
+            flex-direction: row;
+            position: absolute;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+            height: 60px;
+
+            bottom: 10px;
+
+            i {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                width: 60px;
+                height: 60px;
+                border-radius: 5px;
+                font-size: 20px;
+                background-color: bisque;
+                transition: background-color 1.3s ease;
+
+                &:hover {
+                    background-color: gray;
+                    color: white;
+
+                }
+            }
+        }
+
+        &:hover {
+
+
+
+            .product__action {
+                display: flex;
+            }
+
+            img {
+                transform: scale(1.2);
+                filter: blur(3px);
+            }
+
+        }
+    }
+
+    .productDesc {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+
+        .nameProduct {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .priceProduct {
+            font-size: 15px;
+
+            .old__price {
+                text-decoration: line-through;
+                color: gray;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    @media (max-width:900px) {
+        .productImg {
+            .product__lable {
+                width: 30px !important;
+                height: 30px !important;
+                font-size: 10px !important;
+            }
+
+        }
+
+
+        .productDesc {
+            .nameProduct {
+                font-size: 13px !important;
+
+
+            }
+
+            .priceProduct {
+                font-size: 10px !important;
+
+                .old__price {
+                    text-decoration: line-through;
+                    color: gray;
+                    margin-left: 10px;
+                }
+            }
+        }
+
+    }
+}
